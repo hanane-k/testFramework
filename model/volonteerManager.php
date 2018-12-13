@@ -5,7 +5,6 @@
         $req = $db->query("SELECT * FROM volonteer");
         $result = $req->fetchAll(PDO::FETCH_ASSOC);
         return $result;
-        var_dump($result);
 
     }
 // get volonteers function
@@ -24,7 +23,7 @@
         return $result;
     }
 // insert function
-    function insertUser($volonteer) {
+    function addUser($volonteer) {
         $db = getDataBase();
         $req = $db->prepare("INSERT INTO volonteer (name, firstname, password, status, age, comment, disponibility, street, city) VALUES(:name, :firstname, :password, :status, :age, :comment, :disponibility, :street, :city)");
         $result = $req->execute([

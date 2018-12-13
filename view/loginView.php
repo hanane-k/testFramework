@@ -5,3 +5,4 @@ require "view/form/loginForm.php";
 require "view/template/footer.php";
 
 ?>
+<a href="listeUser">clic</a>

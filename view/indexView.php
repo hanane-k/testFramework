@@ -3,7 +3,7 @@ require "template/header.php";
 ?>
 
 <h2>Liste des bénévoles : </h2>
-<form action="" method="post">
+<!-- <form action="" method="post">
   <label for="select">Trier par : </label>
   <select name="order" id="select">
       <option value="">selectionner</option>
@@ -15,7 +15,7 @@ require "template/header.php";
   <input type="serch" name="city" id="ville" placeholder="Ville">
 
   <input type="submit" value="OK">
-</form>
+</form> -->
 <a href="insertUser.php" class="btn btn-primary mt-5 mb-5">Ajouter un bénévole</a>
 
 <table class="table text">
