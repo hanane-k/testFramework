@@ -16,7 +16,9 @@ require "template/header.php";
 
   <input type="submit" value="OK">
 </form> -->
-<a href="insertUser.php" class="btn btn-primary mt-5 mb-5">Ajouter un bénévole</a>
+<a href="insertUser" class="btn btn-primary mt-5 mb-5 mr-5">Ajouter un bénévole</a>
+<a href="listeMsg" class="btn btn-primary m-5">Voir tout les messages</a>
+<a <?php setHref("logout");  ?> class="btn btn-danger mt-5 mb-5 ml-5">Se deconnecter</a>
 
 <table class="table text">
   <thead>
@@ -49,8 +51,8 @@ require "template/header.php";
       <td><?php echo $volonteer["street"]; ?></td>
       <td><?php echo $volonteer["city"]; ?></td>
       <td>
-      <a href="updateUser.php?id=<?php echo $volonteer['ID']; ?>" class="btn btn-success">Modifier</a>
-      <a href="deleteUser.php?id=<?php echo $volonteer['ID']; ?>" class="btn btn-danger">Supprimer</a>
+      <a href="updateUser?id=<?php echo $volonteer['ID']; ?>" class="btn btn-success">Modifier</a>
+      <a href="deleteUser?id=<?php echo $volonteer['ID']; ?>" class="btn btn-danger">Supprimer</a>
       </td>
     </tr>
     <?php

@@ -27,9 +27,9 @@
   </div>
   <div class="form-group col-10 col-md-8 col-lg-6">
     <label for="disponibility">Disponibilité</label>
-    <select class="form-control" name="disponibility" id="disponibility" value="<?php echo (isset($volonteer)?$volonteer["disponibility"]:""); ?>">
+    <select class="form-control" name="disponibility" id="disponibility">
         <option value="1" selected>Disponibile</option>
-        <option value="0" selected>Indisponibile</option>
+        <option value="0">Indisponibile</option>
     </select>
   </div>
   <div class="form-group col-10 col-md-8 col-lg-6">

@@ -2,7 +2,7 @@
 function insertUser() {
     if (!empty($_POST)) {
         addUser($_POST);
-        redirectTo("user/list");
+        redirectTo("listeUser");
     }
     require "view/insertUserView.php";
 }
@@ -10,6 +10,7 @@ function insertUser() {
 function listeUser() {
     if (!empty($_POST) || !empty($_POST["city"])) {
         $volonteers = sortedVolonteers();
+        session_start();
     }
     else {
         $volonteers = getVolonteers();
@@ -36,5 +37,40 @@ function loginUser() {
     require "view/loginView.php";
 }
 
+function update() {
+    if(isset($_GET["id"])) {
+        $id = htmlspecialchars($_GET["id"]);
+        $volonteer = getVolonteer($id);
+    }
+    if(!empty($_POST)) {
+        updateUser($_POST);
+        redirectTo("listeUser.php");
+    }
+    require "view/updateUserView.php";
+}
 
+function deleteUser() {
+    $id = htmlspecialchars($_GET["id"]);
+    deleteVolonteer($id);
+    redirectTo("listeUser");
+}
+
+function deconnectUser() {
+    logout();
+    redirectTo("");
+}
+
+function adminRights() {
+    if ($_SESSION["user"] === "admin") {
+        redirectTo("listeUser");
+    }
+    else {
+        redirectTo("");
+    }
+}
+function userRights() {
+    if ($_SESSION["user"] === "user") {
+        
+    }
+}
 ?>

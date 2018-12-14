@@ -25,6 +25,28 @@ function getRoutes() {
     "listeUser" => [
       "user",
       "listeUser"
+    ],
+    "updateUser" => [
+      "user",
+      "update",
+      ["id" => ["integer"]]
+    ],
+    "deleteUser" => [
+      "user",
+      "deleteUser",
+      ["id" => ["integer"]]
+    ],
+    "logout" => [
+      "user",
+      "deconnectUser"
+    ],
+    "listeMsg" => [
+      "msg",
+      "listeMsg"
+    ],
+    "insertMsg" => [
+      "msg",
+      "InsertMsg"
     ]
   ];
 }

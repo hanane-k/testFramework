@@ -42,10 +42,12 @@
 // update function
     function updateUser($form) {
         $db = getDataBase();
-        $req = $db->prepare("UPDATE volonteer SET name = :name, firstname = :firstname, age = :age, comment = :comment, disponibility = :disponibility, street = :street, city = :city WHERE ID = :ID");
+        $req = $db->prepare("UPDATE volonteer SET name = :name, firstname = :firstname, password = :password, status = :status, age = :age, comment = :comment, disponibility = :disponibility, street = :street, city = :city WHERE ID = :ID");
         $result = $req->execute([
             "name" => $form["name"],
             "firstname" => $form["firstname"],
+            "password" => $form["password"],
+            "status" => $form["status"],
             "age" => $form["age"],
             "comment" => $form["comment"],
             "disponibility" => $form["disponibility"],
