@@ -46,7 +46,11 @@ function getRoutes() {
     ],
     "insertMsg" => [
       "msg",
-      "InsertMsg"
+      "insertMsg"
+    ],
+    "listeMsg" =>[
+    "msg",
+    "deleteMsg"
     ]
   ];
 }

@@ -1,5 +1,7 @@
 <?php
 require "template/header.php";
+        session_start();
+
 ?>
 
 <h2>Liste des bénévoles : </h2>

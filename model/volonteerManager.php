@@ -15,6 +15,14 @@
         $result = $req->fetch(PDO::FETCH_ASSOC);
         return $result;
     }
+
+    function getVolonteerByName($name) {
+        $db = getDataBase();
+        $req = $db->prepare("SELECT * FROM volonteer WHERE name = ?");
+        $req->execute([$name]);
+        $result = $req->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
 // delete volonteer function
     function deleteVolonteer($id) {
         $db = getDataBase();

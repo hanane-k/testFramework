@@ -1,6 +1,8 @@
-<a href="listeMsg.php" class="mx-5">Retour à la liste des messages</a>
+<a <?php setHref("listeMsg");  ?> class="mx-5">Retour à la liste des messages</a>
+<a <?php setHref("logout");  ?> class="btn btn-danger mt-5 mb-5 ml-5">Se deconnecter</a>
 
-<form action="" methode="post" class="mt-5">
+
+<form action="" method="post" class="mt-5">
   <div class="form-group col-11 col-md-9 col-lg-8">
     <label for="destinataire">Destinataire</label>
     <input type="text" class="form-control" id="destinataire" name="recipient" placeholder="Enter destinataire">

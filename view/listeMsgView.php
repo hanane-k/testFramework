@@ -5,8 +5,10 @@ $userId = $_SESSION["user"]["ID"];
 $message = getMessages($userId);
 
 ?>
-<a href="listeUser" class="btn btn-primary mt-5 mb-5">Les volontaire</a>
-<a href="insertMsg" class="btn btn-primary mt-5 mb-5">Nouveau message</a>
+<a href="listeUser" class="btn btn-primary mt-5 mb-5 mr-5">Les volontaire</a>
+<a href="insertMsg" class="btn btn-primary mt-5 mb-5 ml-5 mr-5">Nouveau message</a>
+<a <?php setHref("logout");  ?> class="btn btn-danger mt-5 mb-5 ml-5">Se deconnecter</a>
+
 
 <table class="table text">
   <thead>
@@ -34,8 +36,8 @@ $message = getMessages($userId);
       <?php
         // foreach ($volonteers as $key => $volonteer) {
       ?>
-          <td><?php echo $value["recipient"]; ?></td>
-          <td><?php echo $value["sender"]; ?></td>
+          <td><?php echo $_SESSION["user"]["name"]; ?></td>
+          <td><?php echo $value["name"]; ?></td>
       <?php
         // }
       ?>

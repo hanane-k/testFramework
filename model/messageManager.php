@@ -9,16 +9,23 @@ function getMessages($userId) {
   return $result;
 }
 
-function addMessage($message, $sender) {
+function addMessage($message, $sender, $volonteer) {
   $db = getDataBase();
   $query = $db->prepare("INSERT INTO msg(object, msg, date, recipient, sender) VALUES (:object, :msg, NOW(), :recipient, :sender)");
   $result = $query->execute([
     "object" => $message["object"],
     "msg" => $message["msg"],
-    "recipient" => $message["name"],
+    "recipient" => $volonteer["ID"],
     "sender" => $sender
   ]);
   $query->closeCursor();
+  return $result;
+}
+
+function deleteMessage($id) {
+  $db = getDataBase();
+  $req = $db->prepare("DELETE FROM msg WHERE ID = :ID");
+  $result = $req->execute(["ID" => $id]);
   return $result;
 }
 

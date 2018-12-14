@@ -1,18 +1,22 @@
 <?php
-function InsertMsg() {
+
+function insertMsg() {
+    session_start();
     if (!empty($_POST)) {
-        addMessage($message, $sender);
-        rederectTo("insertMsg");
+        $recipient = getVolonteerByName($_POST["recipient"]);
+        addMessage($_POST, $_SESSION["user"]["ID"], $recipient);
+        redirectTo("listeMsg");
     }
     require "view/insertMsgView.php";
 }
+
 function listeMsg() {
-        // initializeUserSession($user);
-        // session_start();
-        // $userId = $_SESSION["user"]["ID"];
-        // $message = getMessages($userId);
     require "view/listeMsgView.php";
 }
 
-
+function deleteMsg() {
+    $id = htmlspecialchars($_GET["id"]);
+    deleteMessage($id);
+    redirectedTo("listeMsg");
+}
 ?>

@@ -8,13 +8,13 @@ function insertUser() {
 }
 
 function listeUser() {
-    if (!empty($_POST) || !empty($_POST["city"])) {
-        $volonteers = sortedVolonteers();
-        session_start();
-    }
-    else {
+    // if (!empty($_POST) || !empty($_POST["city"])) {
+    //     $volonteers = sortedVolonteers();
+    //     session_start();
+    // }
+    // else {
         $volonteers = getVolonteers();
-    }
+    // }
     require "view/indexView.php";
 }
 
